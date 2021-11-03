@@ -2,12 +2,14 @@ from django.db import models
 
 # Create your models here.
 
+
 class Event(models.Model):
     title = models.CharField(max_length=30)
     start_time = models.DateTimeField(null=True, blank=True)
     end_time = models.DateTimeField(null=True, blank=True)
     media_field = models.FileField(upload_to="event", null=True, blank=True)
     description = models.TextField(blank=True)
+
     def __str__(self):
         return self.title
 
@@ -29,10 +31,10 @@ class Author(models.Model):
 
 
 class Question(models.Model):
-    Difficulty_Type = models.TextChoices('Difficulty_Type', 'HARD MEDIUM EASY')
+    Difficulty_Type = models.TextChoices("Difficulty_Type", "HARD MEDIUM EASY")
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     title = models.CharField(max_length=30)
-    body = models.TextField (blank=True)
+    body = models.TextField(blank=True)
     description = models.CharField(max_length=100)
     format = models.CharField(max_length=30)
     difficulty = models.CharField(choices=Difficulty_Type.choices, max_length=10)
