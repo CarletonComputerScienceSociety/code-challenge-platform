@@ -58,7 +58,7 @@ class SubmissionResource(admin.ModelAdmin):
 
 @admin.register(WinningSubmission)
 class WinningSubmissionResource(admin.ModelAdmin):
-    list_display = ["event", "submission"]
+    list_display = ["id",  "answer", "submission_time", "email"]
 
 
 @admin.register(Answer)
