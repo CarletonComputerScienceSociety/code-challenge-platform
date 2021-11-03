@@ -6,38 +6,38 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('codechallenge', '0002_remove_event_test'),
+        ("codechallenge", "0002_remove_event_test"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='author',
-            name='email',
+            model_name="author",
+            name="email",
             field=models.EmailField(max_length=50),
         ),
         migrations.AlterField(
-            model_name='category',
-            name='name',
+            model_name="category",
+            name="name",
             field=models.CharField(max_length=30),
         ),
         migrations.AlterField(
-            model_name='event',
-            name='title',
+            model_name="event",
+            name="title",
             field=models.CharField(max_length=30),
         ),
         migrations.AlterField(
-            model_name='question',
-            name='format',
+            model_name="question",
+            name="format",
             field=models.CharField(max_length=30),
         ),
         migrations.AlterField(
-            model_name='question',
-            name='title',
+            model_name="question",
+            name="title",
             field=models.CharField(max_length=30),
         ),
         migrations.AlterField(
-            model_name='submission',
-            name='email',
+            model_name="submission",
+            name="email",
             field=models.EmailField(max_length=50),
         ),
     ]
