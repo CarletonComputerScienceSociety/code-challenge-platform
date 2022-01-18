@@ -39,7 +39,7 @@ class QuestionResource(admin.ModelAdmin):
         "id",
         "event",
         "title",
-        "body",
+        "get_body",
         "description",
         "format",
         "difficulty",
@@ -53,7 +53,7 @@ class QuestionResource(admin.ModelAdmin):
 
 @admin.register(Submission)
 class SubmissionResource(admin.ModelAdmin):
-    list_display = ["id", "answer", "submission_time", "email"]
+    list_display = ["id", "submission_time", "question", "answer", "email", "correct"]
 
 
 @admin.register(WinningSubmission)

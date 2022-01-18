@@ -21,6 +21,22 @@ schema_view = get_schema_view(
 
 
 urlpatterns = [
+    path("questions/", QuestionList.as_view(), name="questions"),
+    path(
+        "questions/<id>",
+        QuestionDetails.as_view(),
+        name="question-details",
+    ),
+    path("events/", EventList.as_view(), name="events"),
+    path(
+        "events/<id>",
+        EventDetails.as_view(),
+        name="event-details",
+    ),
+    path("submissions/", SubmissionList.as_view(), name="submission"),
+
     path("", schema_view.with_ui("swagger", cache_timeout=0), name="schema-swagger-ui"),
     path("redoc/", schema_view.with_ui("redoc", cache_timeout=0), name="schema-redoc"),
+
 ]
+# swagger: localhost:8000/api/
