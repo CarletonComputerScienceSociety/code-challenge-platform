@@ -1,52 +1,44 @@
 
 const questionCardStyle = {
-    container:containerStyle,
+    container: containerStyle,
+    difficulty: difficultyStyle,
     title:{
-        color:'#111',
+        color:'text.primary',
         marginBottom: '1.5rem',
         textTransform: 'capitalize'
     },
     description:{
-        color:'#333'
-    },
-    difficulty: difficultyStyle
+        color:'text.secondary'
+    }
 };
 
 function containerStyle(isHover){
-    const style = {
-        fontFamily: 'Roboto sans-serif', 
-        height: '14.375rem',
-        width: '21.875rem',
-        borderRadius: '1.5%',
-        backgroundColor: '#fff',
-        padding: '0.938rem 1.25rem 1.25rem 1.25rem',
-        transition: 'all 0.5s ease' ,
-        overflow: 'hidden',
-        textOverflow: 'ellipsis'
-    }
     if(isHover){
-        return {...style, boxShadow: '0 5px 12px -3px rgb(0 0 0 / 35%)'}
+        return {backgroundColor: 'action.hover', boxShadow: 2}
     }else{
-        return {...style, boxShadow: '0px 5px 12px -4px rgb(0 0 0 / 20%)'}
+        return {backgroundColor: 'background.default', boxShadow: 6}
     }
 
 }
 function difficultyStyle(difficulty){
     const style = {
         marginBottom: '1.9rem',
-         textTransform: 'capitalize'
+        textTransform: 'capitalize'
     }
 
     switch(difficulty){
-        case 'hard':
+        case 'hard': 
+        case 'Challenging':
             return {...style, color: '#28a74c'};
-        case 'medium':
+        case 'medium': 
+        case 'Intermediate':
             return {...style, color: '#0080ff'};
-        case 'easy':
+        case 'easy': 
+        case 'Basic':
             return {...style, color: '#f54425'};
         default:
-            return {...style, color: 'black'};
+            return {...style, color: 'text.primary'};
     }
 }
 
-export { questionCardStyle, difficultyStyle };
+export { questionCardStyle};

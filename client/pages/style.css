@@ -1,3 +1,58 @@
-body{
+*{
     box-sizing: border-box;
+    font-family: 'Roboto';
+}
+.question-card{
+    font-family: 'Roboto';
+    justify-content: center;
+    height: 14rem;
+    width: 21.875rem;
+    border-radius: 1.5%;
+    transition: all 0.5s ease;
+    padding: 1rem 1.25rem 1.25rem; 
+    overflow-y: hidden;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.main-question{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.question-body{
+    text-align: left;
+}
+
+.question-image{
+    width: 90%;
+    height: auto;
+    margin: 1rem;
+}
+.question-input{
+    margin-right: 1rem;
+    border:none;
+    outline:none;
+    height:2rem;
+    background-color:transparent;
+    box-shadow: 0px 1px gray;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    width: 100%;
+    max-width: 500px;
+}
+
+.error-input{
+    box-shadow: 0px 1px red !important;
+}
+
+.correct-input{
+    box-shadow: 0px 1px green;
+}
+.show-answer-button{
+    margin: 1rem;
+    display: block;
+    border-radius: 2px;
 }
